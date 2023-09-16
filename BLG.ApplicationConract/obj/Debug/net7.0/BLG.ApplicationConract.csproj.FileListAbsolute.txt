@@ -1,0 +1,11 @@
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\bin\Debug\net7.0\BLG.ApplicationConract.deps.json
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\bin\Debug\net7.0\BLG.ApplicationConract.dll
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\bin\Debug\net7.0\BLG.ApplicationConract.pdb
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\obj\Debug\net7.0\BLG.ApplicationConract.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\obj\Debug\net7.0\BLG.ApplicationConract.AssemblyInfoInputs.cache
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\obj\Debug\net7.0\BLG.ApplicationConract.AssemblyInfo.cs
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\obj\Debug\net7.0\BLG.ApplicationConract.csproj.CoreCompileInputs.cache
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\obj\Debug\net7.0\BLG.ApplicationConract.dll
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\obj\Debug\net7.0\refint\BLG.ApplicationConract.dll
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\obj\Debug\net7.0\BLG.ApplicationConract.pdb
+D:\Project\Api\Blog_WebApi\BLG.ApplicationConract\obj\Debug\net7.0\ref\BLG.ApplicationConract.dll

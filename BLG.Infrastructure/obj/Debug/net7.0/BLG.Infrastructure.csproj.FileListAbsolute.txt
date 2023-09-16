@@ -1,0 +1,15 @@
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\BLG.Infrastructure.deps.json
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\BLG.Infrastructure.dll
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\BLG.Infrastructure.pdb
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\BLG.Domin.dll
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\BLG.Domin.pdb
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.csproj.AssemblyReference.cache
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.AssemblyInfoInputs.cache
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.AssemblyInfo.cs
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.csproj.CopyComplete
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.dll
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\refint\BLG.Infrastructure.dll
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.pdb
+D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\ref\BLG.Infrastructure.dll

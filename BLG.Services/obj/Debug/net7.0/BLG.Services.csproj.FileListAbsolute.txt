@@ -1,0 +1,17 @@
+D:\Project\Api\Blog_WebApi\BLG.Services\bin\Debug\net7.0\BLG.Services.deps.json
+D:\Project\Api\Blog_WebApi\BLG.Services\bin\Debug\net7.0\BLG.Services.dll
+D:\Project\Api\Blog_WebApi\BLG.Services\bin\Debug\net7.0\BLG.Services.pdb
+D:\Project\Api\Blog_WebApi\BLG.Services\bin\Debug\net7.0\BLG.Domin.dll
+D:\Project\Api\Blog_WebApi\BLG.Services\bin\Debug\net7.0\BLG.Infrastructure.dll
+D:\Project\Api\Blog_WebApi\BLG.Services\bin\Debug\net7.0\BLG.Infrastructure.pdb
+D:\Project\Api\Blog_WebApi\BLG.Services\bin\Debug\net7.0\BLG.Domin.pdb
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\BLG.Services.csproj.AssemblyReference.cache
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\BLG.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\BLG.Services.AssemblyInfoInputs.cache
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\BLG.Services.AssemblyInfo.cs
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\BLG.Services.csproj.CoreCompileInputs.cache
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\BLG.Services.csproj.CopyComplete
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\BLG.Services.dll
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\refint\BLG.Services.dll
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\BLG.Services.pdb
+D:\Project\Api\Blog_WebApi\BLG.Services\obj\Debug\net7.0\ref\BLG.Services.dll
