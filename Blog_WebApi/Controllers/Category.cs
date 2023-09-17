@@ -31,8 +31,8 @@ public class Category : ControllerBase
         return e;
     }
 
-[HttpGet]
-[Route("categoriesList")]
+    [HttpGet]
+    [Route("categoriesList")]
     public async ValueTask<IEnumerable<CategoriesList>> Getall()
     {
         var categories = _context.categoryuw.get().ToList();
@@ -48,5 +48,22 @@ public class Category : ControllerBase
         }
 
         return lst;
+    }
+[HttpGet]
+[Route("category/{id:guid}")]
+    public async ValueTask<IActionResult> getbyid([FromRoute]Guid id)
+    {
+        var category = _context.categoryuw.Getbyid(id);
+        if (category==null)
+        {
+            return NoContent();
+        }
+        CategoriesList c = new()
+        {
+            id = category.id,
+            name = category.name,
+            urlhadle = category.urlhadle
+        };
+        return Ok(c);
     }
 }
