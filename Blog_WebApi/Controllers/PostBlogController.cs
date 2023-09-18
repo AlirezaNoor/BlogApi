@@ -40,4 +40,31 @@ public class PostBlogController : ControllerBase
         _context.save();
         return Ok();
     }
+
+    [HttpGet]
+    [Route("postblog")]
+    public async ValueTask<IEnumerable<BlogppostDto>> getAll()
+    {
+        var post = _context.postbloguw.get();
+        var lst = new List<BlogppostDto>();
+
+        foreach (var p in post)
+        {
+            lst.Add(new BlogppostDto()
+            {
+                 id = p.id,
+                cotent = p.cotent,
+                date = p.date,
+                img = p.img,
+                shorttitle = p.shorttitle,
+                title = p.title,
+                urlhandler = p.urlhandler,
+                isvisible = p.isvisible,
+                Author = p.Author
+            });
+        }
+
+        return lst;
+    }
+     
 }
