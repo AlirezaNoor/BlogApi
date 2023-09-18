@@ -94,7 +94,7 @@ public class Category : ControllerBase
 
     [HttpDelete]
     [Route("catregoryedit/{id:guid}")]
-    public async ValueTask<IActionResult> deletecategory(Guid id)
+    public async ValueTask<IActionResult> deletecategory([FromRoute]Guid id)
     {
         if (id == null)
         {
