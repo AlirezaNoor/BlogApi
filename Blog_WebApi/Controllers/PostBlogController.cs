@@ -66,5 +66,44 @@ public class PostBlogController : ControllerBase
 
         return lst;
     }
+    [HttpGet]
+    [Route("postblog/{id}")]
+    public async ValueTask<BlogppostDto> get(Guid id)
+    {
+        var p=_context.postbloguw.Getbyid(id);
+        BlogppostDto b = new()
+        {
+            id = p.id,
+            cotent = p.cotent,
+            date = p.date,
+            img = p.img,
+            shorttitle = p.shorttitle,
+            title = p.title,
+            urlhandler = p.urlhandler,
+            isvisible = p.isvisible,
+            Author = p.Author
+        };
+        return b;
+    }
+    [HttpPut]
+    [Route("postblog/{id}")]
+    public async ValueTask<IActionResult> updatepost(Guid id, BlogppostDto p)
+    {
+        Postblog pb = new()
+        {
+            id = id,
+            cotent = p.cotent,
+            date = p.date,
+            img = p.img,
+            shorttitle = p.shorttitle,
+            title = p.title,
+            urlhandler = p.urlhandler,
+            isvisible = p.isvisible,
+            Author = p.Author
+        };
+        _context.postbloguw.update(pb);
+        _context.save();
+        return Ok();
+    }
      
 }
