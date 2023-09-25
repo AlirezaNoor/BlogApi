@@ -11,5 +11,7 @@ public class categorymapping:IEntityTypeConfiguration<category>
         builder.HasKey(x => x.id);
         builder.Property(x => x.name).IsRequired();
         builder.Property(x => x.urlhadle).IsRequired();
+        builder.HasMany(x => x.posts).WithMany(x => x.Categories);
+
     }
 }

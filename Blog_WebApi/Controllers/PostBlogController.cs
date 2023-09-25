@@ -1,4 +1,5 @@
 ﻿using BLG.ApplicationConract.Blog_post;
+using BLG.Domin.CategoryBlogAgg;
 using BLG.Domin.PostBlogAgg;
 using BLG.Services.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
@@ -34,8 +35,14 @@ public class PostBlogController : ControllerBase
             title = p.title,
             urlhandler = p.urlhandler,
             isvisible = p.isvisible,
-            Author = p.Author
+            Author = p.Author,
+            Categories = new List<category>()
         };
+        foreach (var i in p.category)
+        {
+            var c = _context.categoryuw.Getbyid(i);
+            post.Categories.Add(c);
+        }
         _context.postbloguw.insert(post);
         _context.save();
         return Ok();
@@ -43,14 +50,14 @@ public class PostBlogController : ControllerBase
 
     [HttpGet]
     [Route("postblog")]
-    public async ValueTask<IEnumerable<BlogppostDto>> getAll()
+    public async ValueTask<IEnumerable<BlogppostDtoall>> getAll()
     {
-        var post = _context.postbloguw.get();
-        var lst = new List<BlogppostDto>();
+        var post = _context.postbloguw.get(null,"Categories");
+        var lst = new List<BlogppostDtoall>();
 
         foreach (var p in post)
         {
-            lst.Add(new BlogppostDto()
+            lst.Add(new BlogppostDtoall()
             {
                  id = p.id,
                 cotent = p.cotent,
@@ -60,7 +67,15 @@ public class PostBlogController : ControllerBase
                 title = p.title,
                 urlhandler = p.urlhandler,
                 isvisible = p.isvisible,
-                Author = p.Author
+                Author = p.Author,
+                Categories = p.Categories.Select(x=>new category
+                {
+                    id = x.id,
+                    name = x.name,
+                    urlhadle = x.urlhadle
+                    
+                }).ToList()
+                
             });
         }
 
@@ -68,10 +83,10 @@ public class PostBlogController : ControllerBase
     }
     [HttpGet]
     [Route("postblog/{id}")]
-    public async ValueTask<BlogppostDto> get(Guid id)
+    public async ValueTask<BlogppostDtoall> get(Guid id)
     {
-        var p=_context.postbloguw.Getbyid(id);
-        BlogppostDto b = new()
+        var p=_context.postbloguw.get(x=>x.id==id,"Categories").FirstOrDefault();
+        BlogppostDtoall b = new()
         {
             id = p.id,
             cotent = p.cotent,
@@ -81,7 +96,13 @@ public class PostBlogController : ControllerBase
             title = p.title,
             urlhandler = p.urlhandler,
             isvisible = p.isvisible,
-            Author = p.Author
+            Author = p.Author,
+            Categories = p.Categories.Select(x=> new category()
+            {
+                id = x.id,
+                name = x.name,
+                urlhadle = x.urlhadle
+            }).ToList()
         };
         return b;
     }

@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "BLG.ApplicationConract/1.0.0": {
+        "dependencies": {
+          "BLG.Domin": "1.0.0"
+        },
         "runtime": {
           "BLG.ApplicationConract.dll": {}
+        }
+      },
+      "BLG.Domin/1.0.0": {
+        "runtime": {
+          "BLG.Domin.dll": {}
         }
       }
     }
   },
   "libraries": {
     "BLG.ApplicationConract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BLG.Domin/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -17,6 +17,6 @@ public class Blogpostmapping:IEntityTypeConfiguration<Postblog>
         builder.Property(x => x.title).IsRequired();
         builder.Property(x => x.urlhandler).IsRequired();
         builder.Property(x => x.Author).IsRequired();
-
+        builder.HasMany(x => x.Categories).WithMany(x => x.posts);
     }
 }

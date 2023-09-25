@@ -619,6 +619,9 @@
         }
       },
       "BLG.ApplicationConract/1.0.0": {
+        "dependencies": {
+          "BLG.Domin": "1.0.0"
+        },
         "runtime": {
           "BLG.ApplicationConract.dll": {}
         }

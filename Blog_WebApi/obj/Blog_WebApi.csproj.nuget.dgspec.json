@@ -25,7 +25,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Project\\Api\\Blog_WebApi\\BLG.Domin\\BLG.Domin.csproj": {
+                "projectPath": "D:\\Project\\Api\\Blog_WebApi\\BLG.Domin\\BLG.Domin.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

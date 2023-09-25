@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "BLG.Domin/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BLG.Domin.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BLG.Domin.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BLG.Domin/1.0.0": {
+      "type": "project",
+      "path": "../BLG.Domin/BLG.Domin.csproj",
+      "msbuildProject": "../BLG.Domin/BLG.Domin.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "BLG.Domin >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Administrator\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Project\\Api\\Blog_WebApi\\BLG.Domin\\BLG.Domin.csproj": {
+              "projectPath": "D:\\Project\\Api\\Blog_WebApi\\BLG.Domin\\BLG.Domin.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

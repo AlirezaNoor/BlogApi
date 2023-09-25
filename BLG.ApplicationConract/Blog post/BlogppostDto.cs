@@ -11,5 +11,7 @@ public class BlogppostDto
     public DateTime date { get; set; }
     public string Author { get; set; }
     public bool isvisible { get; set; }
+
+    public Guid []  category { get; set; }
     
 }

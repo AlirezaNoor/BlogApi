@@ -4,6 +4,7 @@ using BLG.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BLG.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230924195751_ThsIsSecendMigration")]
+    partial class ThsIsSecendMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,36 +83,6 @@ namespace BLG.Infrastructure.Migrations
                     b.HasKey("id");
 
                     b.ToTable("postblog");
-                });
-
-            modelBuilder.Entity("Postblogcategory", b =>
-                {
-                    b.Property<Guid>("Categoriesid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("postsid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Categoriesid", "postsid");
-
-                    b.HasIndex("postsid");
-
-                    b.ToTable("Postblogcategory");
-                });
-
-            modelBuilder.Entity("Postblogcategory", b =>
-                {
-                    b.HasOne("BLG.Domin.CategoryBlogAgg.category", null)
-                        .WithMany()
-                        .HasForeignKey("Categoriesid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BLG.Domin.PostBlogAgg.Postblog", null)
-                        .WithMany()
-                        .HasForeignKey("postsid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
