@@ -9,12 +9,15 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+      <PackageReference Include="PersianDateTime" Version="1.1.5082.36395" />
     </ItemGroup>
 
 
     <ItemGroup>
       <ProjectReference Include="..\BLG.Infrastructure\BLG.Infrastructure.csproj" />
     </ItemGroup>
+
+
 
 
 

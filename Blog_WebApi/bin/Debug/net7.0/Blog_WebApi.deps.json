@@ -404,6 +404,14 @@
           }
         }
       },
+      "PersianDateTime/1.1.5082.36395": {
+        "runtime": {
+          "lib/net40/PersianDateTime.dll": {
+            "assemblyVersion": "1.1.5082.36395",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.5.0": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -645,7 +653,8 @@
       "BLG.Services/1.0.0": {
         "dependencies": {
           "BLG.Infrastructure": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.11"
+          "Microsoft.EntityFrameworkCore": "7.0.11",
+          "PersianDateTime": "1.1.5082.36395"
         },
         "runtime": {
           "BLG.Services.dll": {}
@@ -938,6 +947,13 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "PersianDateTime/1.1.5082.36395": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rglVEiB5XXVpTuEH6XqM4U8z21pRKiX1KZcxfRVtLir46Rxt8NHWqw1Qdbphzy5k3dTOI3JQDsbrd7RIDaZg2w==",
+      "path": "persiandatetime/1.1.5082.36395",
+      "hashPath": "persiandatetime.1.1.5082.36395.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.5.0": {
       "type": "package",

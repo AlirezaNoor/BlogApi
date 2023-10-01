@@ -2,12 +2,12 @@
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace SITA.Helpers
+namespace BLG.Services.Extentions
 {
     public static class Logger
     {
-        public static void WriteToConsole(Exception err, [CallerFilePath] string file = null,
-            [CallerLineNumber] int line = 0, )
+        public static void WriteToConsole(Exception err,
+           string context,  string programer , string des, [CallerLineNumber] int line = 0, [CallerFilePath] string file = null )
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("[{0}] [{1}] ({2}): {3}", PersianDateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
@@ -16,16 +16,19 @@ namespace SITA.Helpers
             Console.WriteLine($"InnerException = {err.InnerException}");
             Console.WriteLine($"StackTrace = {err.StackTrace}");
             Console.WriteLine($"Method = {err.TargetSite?.Name}");
+            Console.WriteLine($"request = {context}");
+            Console.WriteLine($"programer description = {des}");
             Console.ResetColor();
         }
 
-        public static void WriteToConsole(string err, [CallerFilePath] string file = null,
+        public static void WriteToConsole(string err, string context,[CallerFilePath] string file = null,
             [CallerLineNumber] int line = 0)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("[{0}] [{1}] ({2}): {3}", PersianDateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                 Path.GetFileName(file), line, err);
-            Console.ResetColor();
+            Console.WriteLine($"request = {context}");
+             Console.ResetColor();
         }
 
         public static void WriteToFile(Exception e)

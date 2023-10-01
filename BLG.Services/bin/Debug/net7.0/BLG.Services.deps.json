@@ -9,7 +9,8 @@
       "BLG.Services/1.0.0": {
         "dependencies": {
           "BLG.Infrastructure": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.11"
+          "Microsoft.EntityFrameworkCore": "7.0.11",
+          "PersianDateTime": "1.1.5082.36395"
         },
         "runtime": {
           "BLG.Services.dll": {}
@@ -380,6 +381,14 @@
             "assetType": "runtime",
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "PersianDateTime/1.1.5082.36395": {
+        "runtime": {
+          "lib/net40/PersianDateTime.dll": {
+            "assemblyVersion": "1.1.5082.36395",
+            "fileVersion": "1.1.0.0"
           }
         }
       },
@@ -798,6 +807,13 @@
       "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "PersianDateTime/1.1.5082.36395": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rglVEiB5XXVpTuEH6XqM4U8z21pRKiX1KZcxfRVtLir46Rxt8NHWqw1Qdbphzy5k3dTOI3JQDsbrd7RIDaZg2w==",
+      "path": "persiandatetime/1.1.5082.36395",
+      "hashPath": "persiandatetime.1.1.5082.36395.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "type": "package",

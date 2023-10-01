@@ -681,6 +681,19 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
+      "PersianDateTime/1.1.5082.36395": {
+        "type": "package",
+        "compile": {
+          "lib/net40/PersianDateTime.dll": {
+            "related": ".XML"
+          }
+        },
+        "runtime": {
+          "lib/net40/PersianDateTime.dll": {
+            "related": ".XML"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.5.0": {
         "type": "package",
         "dependencies": {
@@ -1204,7 +1217,8 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "BLG.Infrastructure": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.11"
+          "Microsoft.EntityFrameworkCore": "7.0.11",
+          "PersianDateTime": "1.1.5082.36395"
         },
         "compile": {
           "bin/placeholder/BLG.Services.dll": {}
@@ -2404,6 +2418,19 @@
         "mono.texttemplating.nuspec"
       ]
     },
+    "PersianDateTime/1.1.5082.36395": {
+      "sha512": "rglVEiB5XXVpTuEH6XqM4U8z21pRKiX1KZcxfRVtLir46Rxt8NHWqw1Qdbphzy5k3dTOI3JQDsbrd7RIDaZg2w==",
+      "type": "package",
+      "path": "persiandatetime/1.1.5082.36395",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/PersianDateTime.XML",
+        "lib/net40/PersianDateTime.dll",
+        "persiandatetime.1.1.5082.36395.nupkg.sha512",
+        "persiandatetime.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/6.5.0": {
       "sha512": "FK05XokgjgwlCI6wCT+D4/abtQkL1X1/B9Oas6uIwHFmYrIO9WUD5aLC9IzMs9GnHfUXOtXZ2S43gN1mhs5+aA==",
       "type": "package",
@@ -3522,5 +3549,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PersianDateTime 1.1.5082.36395' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "PersianDateTime",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

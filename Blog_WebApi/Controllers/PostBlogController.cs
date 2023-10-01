@@ -1,6 +1,7 @@
 ﻿using BLG.ApplicationConract.Blog_post;
 using BLG.Domin.CategoryBlogAgg;
 using BLG.Domin.PostBlogAgg;
+using BLG.Services.Extentions;
 using BLG.Services.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,7 +12,6 @@ namespace Blog_WebApi.Controllers;
 public class PostBlogController : ControllerBase
 {
     private readonly Iunitofwork _context;
-
     public PostBlogController(Iunitofwork context)
     {
         _context = context;
@@ -50,7 +50,7 @@ public class PostBlogController : ControllerBase
 
     [HttpGet]
     [Route("postblog")]
-    public async ValueTask<IEnumerable<BlogppostDtoall>> getAll()
+    public async Task<IEnumerable<BlogppostDtoall>> getAll()
     {
         var post = _context.postbloguw.get(null,"Categories");
         var lst = new List<BlogppostDtoall>();
@@ -83,32 +83,41 @@ public class PostBlogController : ControllerBase
     }
     [HttpGet]
     [Route("postblog/{id}")]
-    public async ValueTask<BlogppostDtoall> get(Guid id)
+    public async Task<BlogppostDtoall> get(Guid id)
     {
         var p=_context.postbloguw.get(x=>x.id==id,"Categories").FirstOrDefault();
-        BlogppostDtoall b = new()
+        try
         {
-            id = p.id,
-            cotent = p.cotent,
-            date = p.date,
-            img = p.img,
-            shorttitle = p.shorttitle,
-            title = p.title,
-            urlhandler = p.urlhandler,
-            isvisible = p.isvisible,
-            Author = p.Author,
-            Categories = p.Categories.Select(x=> new category()
+            BlogppostDtoall b = new()
             {
-                id = x.id,
-                name = x.name,
-                urlhadle = x.urlhadle
-            }).ToList()
-        };
-        return b;
+                id = p.id,
+                cotent = p.cotent,
+                date = p.date,
+                img = p.img,
+                shorttitle = p.shorttitle,
+                title = p.title,
+                urlhandler = p.urlhandler,
+                isvisible = p.isvisible,
+                Author = p.Author,
+                Categories = p.Categories.Select(x=> new category()
+                {
+                    id = x.id,
+                    name = x.name,
+                    urlhadle = x.urlhadle
+                }).ToList()
+            };
+            return b;
+        }
+        catch (Exception e)
+        {
+             Logger.WriteToConsole(e,"postblog/{id}","road by alireza" , "this log in paostblog conteroll",116);
+        }
+
+        return null;
     }
     [HttpPut]
     [Route("postblog/{id}")]
-    public async ValueTask<IActionResult> updatepost(Guid id, BlogppostDto p)
+    public async Task<IActionResult> updatepost(Guid id, BlogppostDto p)
     {
         Postblog pb = new()
         {
