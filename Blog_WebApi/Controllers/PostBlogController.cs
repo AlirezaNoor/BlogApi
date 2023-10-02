@@ -1,6 +1,7 @@
 ﻿using BLG.ApplicationConract.Blog_post;
 using BLG.Domin.CategoryBlogAgg;
 using BLG.Domin.PostBlogAgg;
+using BLG.Infrastructure.customRepository;
 using BLG.Services.Extentions;
 using BLG.Services.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
@@ -12,9 +13,11 @@ namespace Blog_WebApi.Controllers;
 public class PostBlogController : ControllerBase
 {
     private readonly Iunitofwork _context;
-    public PostBlogController(Iunitofwork context)
+    private readonly IPostblogReposetory _postblogReposetory;
+    public PostBlogController(Iunitofwork context, IPostblogReposetory postblogReposetory)
     {
         _context = context;
+        _postblogReposetory = postblogReposetory;
     }
 
     [HttpPost]
@@ -116,8 +119,8 @@ public class PostBlogController : ControllerBase
         return null;
     }
     [HttpPut]
-    [Route("postblog/{id}")]
-    public async Task<IActionResult> updatepost(Guid id, BlogppostDto p)
+    [Route("postblogedit/{id}")]
+    public async Task<IActionResult> updatepost([FromRoute] Guid id, BlogppostDto p)
     {
         Postblog pb = new()
         {
@@ -129,10 +132,15 @@ public class PostBlogController : ControllerBase
             title = p.title,
             urlhandler = p.urlhandler,
             isvisible = p.isvisible,
-            Author = p.Author
+            Author = p.Author,
+            Categories = new List<category>()
         };
-        _context.postbloguw.update(pb);
-        _context.save();
+        foreach (var i in p.category)
+        {
+            var mycategory = _context.categoryuw.Getbyid(i);
+            pb.Categories.Add(mycategory);
+        }
+_postblogReposetory.updatepostblog(pb);
         return Ok();
     }
      

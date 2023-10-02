@@ -1,4 +1,6 @@
 using BLG.Infrastructure.Context;
+using BLG.Infrastructure.customRepository;
+using BLG.Services.Customrepository;
 using BLG.Services.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +18,7 @@ builder.Services.AddDbContext<ApplicationContext>(opt =>
 });
 
 builder.Services.AddScoped<Iunitofwork, unitofwork>();
+builder.Services.AddScoped<IPostblogReposetory, PostblogReposetory>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
