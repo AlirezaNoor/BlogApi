@@ -14,6 +14,7 @@ public class PostBlogController : ControllerBase
 {
     private readonly Iunitofwork _context;
     private readonly IPostblogReposetory _postblogReposetory;
+
     public PostBlogController(Iunitofwork context, IPostblogReposetory postblogReposetory)
     {
         _context = context;
@@ -46,6 +47,7 @@ public class PostBlogController : ControllerBase
             var c = _context.categoryuw.Getbyid(i);
             post.Categories.Add(c);
         }
+
         _context.postbloguw.insert(post);
         _context.save();
         return Ok();
@@ -55,14 +57,14 @@ public class PostBlogController : ControllerBase
     [Route("postblog")]
     public async Task<IEnumerable<BlogppostDtoall>> getAll()
     {
-        var post = _context.postbloguw.get(null,"Categories");
+        var post = _context.postbloguw.get(null, "Categories");
         var lst = new List<BlogppostDtoall>();
 
         foreach (var p in post)
         {
             lst.Add(new BlogppostDtoall()
             {
-                 id = p.id,
+                id = p.id,
                 cotent = p.cotent,
                 date = p.date,
                 img = p.img,
@@ -71,24 +73,23 @@ public class PostBlogController : ControllerBase
                 urlhandler = p.urlhandler,
                 isvisible = p.isvisible,
                 Author = p.Author,
-                Categories = p.Categories.Select(x=>new category
+                Categories = p.Categories.Select(x => new category
                 {
                     id = x.id,
                     name = x.name,
                     urlhadle = x.urlhadle
-                    
                 }).ToList()
-                
             });
         }
 
         return lst;
     }
+
     [HttpGet]
     [Route("postblog/{id}")]
     public async Task<BlogppostDtoall> get(Guid id)
     {
-        var p=_context.postbloguw.get(x=>x.id==id,"Categories").FirstOrDefault();
+        var p = _context.postbloguw.get(x => x.id == id, "Categories").FirstOrDefault();
         try
         {
             BlogppostDtoall b = new()
@@ -102,7 +103,7 @@ public class PostBlogController : ControllerBase
                 urlhandler = p.urlhandler,
                 isvisible = p.isvisible,
                 Author = p.Author,
-                Categories = p.Categories.Select(x=> new category()
+                Categories = p.Categories.Select(x => new category()
                 {
                     id = x.id,
                     name = x.name,
@@ -113,11 +114,12 @@ public class PostBlogController : ControllerBase
         }
         catch (Exception e)
         {
-             Logger.WriteToConsole(e,"postblog/{id}","road by alireza" , "this log in paostblog conteroll",116);
+            Logger.WriteToConsole(e, "postblog/{id}", "road by alireza", "this log in paostblog conteroll", 116);
         }
 
         return null;
     }
+
     [HttpPut]
     [Route("postblogedit/{id}")]
     public async Task<IActionResult> updatepost([FromRoute] Guid id, BlogppostDto p)
@@ -140,8 +142,23 @@ public class PostBlogController : ControllerBase
             var mycategory = _context.categoryuw.Getbyid(i);
             pb.Categories.Add(mycategory);
         }
-_postblogReposetory.updatepostblog(pb);
+
+        _postblogReposetory.updatepostblog(pb);
         return Ok();
     }
-     
+
+    [HttpDelete]
+    [Route("Delete/{id}")]
+    public async Task<IActionResult> DeletePost([FromRoute]Guid id)
+    {
+        var post = _context.postbloguw.Getbyid(id);
+        if (post == null)
+        {
+            return BadRequest();
+        }
+
+        _context.postbloguw.Delete(post);
+        _context.save();
+        return Ok();
+    }
 }
