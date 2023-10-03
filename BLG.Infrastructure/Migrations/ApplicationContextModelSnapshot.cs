@@ -82,6 +82,36 @@ namespace BLG.Infrastructure.Migrations
                     b.ToTable("postblog");
                 });
 
+            modelBuilder.Entity("BLG.Domin.uploadImage.uploadimg", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("fileExtension")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("filename")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("tiltle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("time")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("urlhandle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("uplaodimages", (string)null);
+                });
+
             modelBuilder.Entity("Postblogcategory", b =>
                 {
                     b.Property<Guid>("Categoriesid")

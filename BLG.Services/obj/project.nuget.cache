@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "O1LQFREXZl5zFsTdDZBIZHA84mpOdlOfPQPKrfwLbrda6FeGJV+pmvCVNofs9uqNFkl/s/W/arrAPXho0oLFCQ==",
+  "dgSpecHash": "2iXXIDIqHjIP0gLJgexylvOMB8wKRqevchalrssGe5U95tqExt45L18IGU7IzcJF/8Wb0ERb1Uf+xyjbs794HQ==",
   "success": true,
   "projectFilePath": "D:\\Project\\Api\\Blog_WebApi\\BLG.Services\\BLG.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

@@ -1,5 +1,6 @@
 ﻿using BLG.Domin.CategoryBlogAgg;
 using BLG.Domin.PostBlogAgg;
+using BLG.Domin.uploadImage;
 using BLG.Infrastructure.Context;
 using BLG.Services.GenericReposetory;
 
@@ -10,6 +11,7 @@ public class unitofwork:Iunitofwork,IDisposable
     private readonly ApplicationContext _context;
     private genericrepository<Postblog> _postblog;
     private genericrepository<category> _category;
+    private genericrepository<uploadimg> _upldadimg;
 
     public unitofwork(ApplicationContext context)
     {
@@ -41,7 +43,19 @@ public class unitofwork:Iunitofwork,IDisposable
             return _category;
         }
     }
-    
+
+    public genericrepository<uploadimg> uploadimguw
+    {
+        get
+        {
+            if (_upldadimg==null)
+            {
+                _upldadimg = new genericrepository<uploadimg>(_context);
+            }
+
+            return _upldadimg;
+        }
+    }
      
     public void Dispose()
     {

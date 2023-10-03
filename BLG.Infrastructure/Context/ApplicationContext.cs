@@ -1,5 +1,6 @@
 ﻿using BLG.Domin.CategoryBlogAgg;
 using BLG.Domin.PostBlogAgg;
+using BLG.Domin.uploadImage;
 using BLG.Infrastructure.Mapping;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ public class ApplicationContext:DbContext
 {
     public DbSet<Postblog> postblog { get; set; }
     public DbSet<category> category { get; set; }
+    public DbSet<uploadimg> uploadimage { get; set; }
     public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
     {
     }
@@ -18,5 +20,6 @@ public class ApplicationContext:DbContext
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfiguration(new Blogpostmapping());
         modelBuilder.ApplyConfiguration(new categorymapping());
+        modelBuilder.ApplyConfiguration(new upladmapping());
     }
 }

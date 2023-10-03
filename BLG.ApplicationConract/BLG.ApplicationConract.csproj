@@ -12,4 +12,7 @@
       <ProjectReference Include="..\BLG.Domin\BLG.Domin.csproj" />
     </ItemGroup>
 
+
+
+
 </Project>

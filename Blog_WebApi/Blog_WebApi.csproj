@@ -28,4 +28,9 @@
       <ProjectReference Include="..\BLG.Services\BLG.Services.csproj" />
     </ItemGroup>
 
+
+    <ItemGroup>
+      <Folder Include="images\" />
+    </ItemGroup>
+
 </Project>
