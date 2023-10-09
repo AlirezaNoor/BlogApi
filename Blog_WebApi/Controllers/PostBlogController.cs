@@ -161,4 +161,34 @@ public class PostBlogController : ControllerBase
         _context.save();
         return Ok();
     }
+[HttpGet]
+[Route("dtails/{Urlhandler}")]
+    public  BlogppostDtoall getbyurl([FromRoute] string Urlhandler)
+    {
+        var p=_context.postbloguw.get(x => x.urlhandler == Urlhandler,"Categories").FirstOrDefault();
+        if (p==null)
+        {
+            return null;
+        }
+         BlogppostDtoall blog = new()
+        {
+            id = p.id,
+            cotent = p.cotent,
+            date = p.date,
+            img = p.img,
+            shorttitle = p.shorttitle,
+            title = p.title,
+            urlhandler = p.urlhandler,
+            isvisible = p.isvisible,
+            Author = p.Author,
+            Categories = p.Categories.Select(x => new category()
+            {
+                id = x.id,
+                name = x.name,
+                urlhadle = x.urlhadle
+            }).ToList()
+
+        };
+         return  blog;
+    }
 }
