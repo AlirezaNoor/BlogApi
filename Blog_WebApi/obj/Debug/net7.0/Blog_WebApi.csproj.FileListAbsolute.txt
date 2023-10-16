@@ -83,3 +83,10 @@ D:\Project\Api\Blog_WebApi\Blog_WebApi\bin\Debug\net7.0\Blog_WebApi.pdb
 D:\Project\Api\Blog_WebApi\Blog_WebApi\obj\Debug\net7.0\Blog_WebApi.csproj.CopyComplete
 D:\Project\Api\Blog_WebApi\Blog_WebApi\obj\Debug\net7.0\Blog_WebApi.genruntimeconfig.cache
 D:\Project\Api\Blog_WebApi\Blog_WebApi\obj\Debug\net7.0\ref\Blog_WebApi.dll
+D:\Project\Api\Blog_WebApi\Blog_WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Project\Api\Blog_WebApi\Blog_WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Project\Api\Blog_WebApi\Blog_WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Project\Api\Blog_WebApi\Blog_WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Project\Api\Blog_WebApi\Blog_WebApi\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+D:\Project\Api\Blog_WebApi\Blog_WebApi\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Project\Api\Blog_WebApi\Blog_WebApi\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

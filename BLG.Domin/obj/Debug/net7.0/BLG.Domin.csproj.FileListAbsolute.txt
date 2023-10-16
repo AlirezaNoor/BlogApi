@@ -9,3 +9,4 @@ D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.dll
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\refint\BLG.Domin.dll
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.pdb
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\ref\BLG.Domin.dll
+D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.csproj.AssemblyReference.cache

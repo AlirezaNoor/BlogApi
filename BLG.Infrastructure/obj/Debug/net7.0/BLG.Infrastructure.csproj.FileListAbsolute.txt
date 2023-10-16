@@ -13,8 +13,3 @@ D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructur
 D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\refint\BLG.Infrastructure.dll
 D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\BLG.Infrastructure.pdb
 D:\Project\Api\Blog_WebApi\BLG.Infrastructure\obj\Debug\net7.0\ref\BLG.Infrastructure.dll
-D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Features.dll
-D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\Microsoft.Net.Http.Headers.dll
-D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\System.IO.Pipelines.dll
-D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\Microsoft.AspNetCore.Connections.Abstractions.dll
-D:\Project\Api\Blog_WebApi\BLG.Infrastructure\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
