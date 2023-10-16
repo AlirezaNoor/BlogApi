@@ -1,6 +1,7 @@
 D:\Project\Api\Blog_WebApi\BLG.Domin\bin\Debug\net7.0\BLG.Domin.deps.json
 D:\Project\Api\Blog_WebApi\BLG.Domin\bin\Debug\net7.0\BLG.Domin.dll
 D:\Project\Api\Blog_WebApi\BLG.Domin\bin\Debug\net7.0\BLG.Domin.pdb
+D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.csproj.AssemblyReference.cache
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.GeneratedMSBuildEditorConfig.editorconfig
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.AssemblyInfoInputs.cache
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.AssemblyInfo.cs
@@ -9,4 +10,3 @@ D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.dll
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\refint\BLG.Domin.dll
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.pdb
 D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\ref\BLG.Domin.dll
-D:\Project\Api\Blog_WebApi\BLG.Domin\obj\Debug\net7.0\BLG.Domin.csproj.AssemblyReference.cache

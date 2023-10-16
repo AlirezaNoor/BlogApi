@@ -4,6 +4,7 @@ using BLG.Domin.PostBlogAgg;
 using BLG.Infrastructure.customRepository;
 using BLG.Services.Extentions;
 using BLG.Services.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog_WebApi.Controllers;
@@ -53,6 +54,7 @@ public class PostBlogController : ControllerBase
         return Ok();
     }
 
+    [Authorize]
     [HttpGet]
     [Route("postblog")]
     public async Task<IEnumerable<BlogppostDtoall>> getAll()
@@ -149,7 +151,7 @@ public class PostBlogController : ControllerBase
 
     [HttpDelete]
     [Route("Delete/{id}")]
-    public async Task<IActionResult> DeletePost([FromRoute]Guid id)
+    public async Task<IActionResult> DeletePost([FromRoute] Guid id)
     {
         var post = _context.postbloguw.Getbyid(id);
         if (post == null)
@@ -161,16 +163,18 @@ public class PostBlogController : ControllerBase
         _context.save();
         return Ok();
     }
-[HttpGet]
-[Route("dtails/{Urlhandler}")]
-    public  BlogppostDtoall getbyurl([FromRoute] string Urlhandler)
+
+    [HttpGet]
+    [Route("dtails/{Urlhandler}")]
+    public BlogppostDtoall getbyurl([FromRoute] string Urlhandler)
     {
-        var p=_context.postbloguw.get(x => x.urlhandler == Urlhandler,"Categories").FirstOrDefault();
-        if (p==null)
+        var p = _context.postbloguw.get(x => x.urlhandler == Urlhandler, "Categories").FirstOrDefault();
+        if (p == null)
         {
             return null;
         }
-         BlogppostDtoall blog = new()
+
+        BlogppostDtoall blog = new()
         {
             id = p.id,
             cotent = p.cotent,
@@ -187,8 +191,7 @@ public class PostBlogController : ControllerBase
                 name = x.name,
                 urlhadle = x.urlhadle
             }).ToList()
-
         };
-         return  blog;
+        return blog;
     }
 }

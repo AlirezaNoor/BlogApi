@@ -4,7 +4,7 @@
     <option name="keyValueStorage">
       <map>
         <entry key="Common:buildConfiguration" value="Debug" />
-        <entry key="Common:fb278667-0c9d-4c27-9ad6-cc264755f98d:dbContext" value="BLG.Infrastructure.Context.ApplicationContext" />
+        <entry key="Common:fb278667-0c9d-4c27-9ad6-cc264755f98d:dbContext" value="BLG.Infrastructure.Context.UserContext" />
         <entry key="Common:noBuild" value="false" />
         <entry key="Common:outputFolder" value="Migrations" />
         <entry key="Common:useDefaultConnection" value="true" />
