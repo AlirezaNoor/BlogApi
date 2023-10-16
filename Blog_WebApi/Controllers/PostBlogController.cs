@@ -23,6 +23,7 @@ public class PostBlogController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Writer")]
     [Route("postblog")]
     public async Task<IActionResult> createblog(BlogppostDto p)
     {
@@ -55,7 +56,6 @@ public class PostBlogController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize()]
     [Route("postblog")]
     public async Task<IEnumerable<BlogppostDtoall>> getAll()
     {
@@ -123,6 +123,7 @@ public class PostBlogController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize(Roles = "Writer")]
     [Route("postblogedit/{id}")]
     public async Task<IActionResult> updatepost([FromRoute] Guid id, BlogppostDto p)
     {
@@ -150,6 +151,7 @@ public class PostBlogController : ControllerBase
     }
 
     [HttpDelete]
+    [Authorize(Roles = "Writer")]
     [Route("Delete/{id}")]
     public async Task<IActionResult> DeletePost([FromRoute] Guid id)
     {

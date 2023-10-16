@@ -1,6 +1,7 @@
 ﻿using BLG.ApplicationConract.category;
 using BLG.Domin.CategoryBlogAgg;
 using BLG.Services.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog_WebApi.Controllers;
@@ -18,6 +19,7 @@ public class Category : ControllerBase
 
     //createCategory
     [HttpPost]
+    [Authorize(Roles = "Writer")]
     [Route("Categories")]
     public async Task<CreateCategory> Create(CreateCategory e)
     {
@@ -70,6 +72,7 @@ public class Category : ControllerBase
     }
 
     [HttpPut]
+    [Authorize(Roles = "Writer")]
     [Route("catregoryedit/{id:guid}")]
     public async ValueTask<IActionResult> updatecategory([FromRoute] Guid id, CategoriesList c)
     {
@@ -93,6 +96,7 @@ public class Category : ControllerBase
     }
 
     [HttpDelete]
+    [Authorize(Roles = "Writer")]
     [Route("catregoryedit/{id:guid}")]
     public async ValueTask<IActionResult> deletecategory([FromRoute]Guid id)
     {
