@@ -54,8 +54,8 @@ public class PostBlogController : ControllerBase
         return Ok();
     }
 
-    [Authorize]
     [HttpGet]
+    [Authorize()]
     [Route("postblog")]
     public async Task<IEnumerable<BlogppostDtoall>> getAll()
     {

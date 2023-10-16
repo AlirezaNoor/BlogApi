@@ -1,3 +1,4 @@
+using System.Text;
 using BLG.Infrastructure.Context;
 using BLG.Infrastructure.customRepository;
 using BLG.Services.Customrepository;
@@ -31,6 +32,7 @@ builder.Services.AddIdentityCore<IdentityUser>().AddRoles<IdentityRole>()
 builder.Services.AddScoped<Iunitofwork, unitofwork>();
 builder.Services.AddScoped<IPostblogReposetory, PostblogReposetory>();
 builder.Services.AddScoped<IUploadimageReposetory, UploadimageReposetory>();
+builder.Services.AddScoped<ITokenReposetory, TokenRepository>();
 builder.Services.Configure<IdentityOptions>(opt =>
 {
     opt.Password.RequireDigit = false;
@@ -42,14 +44,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 {
     options.TokenValidationParameters = new TokenValidationParameters()
     {
-        AuthenticationType = "JWt",
+        AuthenticationType = "jwt",
         ValidateIssuer = true,
         ValidateLifetime = true,
         ValidateAudience = true,
         ValidateIssuerSigningKey = true,
         ValidIssuer =  builder.Configuration["jwt:Issure"],
         ValidAudience = builder.Configuration["jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["jwt:key"]))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["jwt:key"]))
     };
 });
 var app = builder.Build();

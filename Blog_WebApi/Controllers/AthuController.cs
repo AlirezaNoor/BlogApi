@@ -1,4 +1,5 @@
 ﻿using BLG.ApplicationConract.Authoration;
+using BLG.Infrastructure.customRepository;
 using BLG.Services.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +12,13 @@ public class AthuController : ControllerBase
 {
     private readonly UserManager<IdentityUser> _userManager;
     private readonly Iunitofwork _context;
+    private readonly ITokenReposetory _tokenReposetory;
 
-    public AthuController(UserManager<IdentityUser> userManager, Iunitofwork context)
+    public AthuController(UserManager<IdentityUser> userManager, Iunitofwork context ,ITokenReposetory tokenReposetory)
     {
         _userManager = userManager;
         _context = context;
+        _tokenReposetory = tokenReposetory;
     }
 
     [HttpPost]
@@ -45,6 +48,35 @@ public class AthuController : ControllerBase
                     ModelState.AddModelError("", error.Description);
                 }
             }
+        }
+
+        return ValidationProblem(ModelState);
+    }
+
+    [HttpPost]
+    [Route("login")]
+    public async Task<IActionResult> Login([FromBody]LoginDto ld)
+    {
+        var user = await _userManager.FindByEmailAsync(ld.Email);
+        if (user!=null)
+        {
+            var checkpassword = await _userManager.CheckPasswordAsync(user, ld.password);
+            if (checkpassword)
+            {
+                var role = await _userManager.GetRolesAsync(user);
+                ResponseDto res = new ResponseDto()
+                {
+                    Email = ld.Email,
+                    Token = _tokenReposetory.createjwt(user,role.ToList()),
+                    role = role.ToList()
+                };
+                return Ok(res);
+            }
+            
+        }
+        else
+        {
+        ModelState.AddModelError("","user or email not correct!");
         }
 
         return ValidationProblem(ModelState);
